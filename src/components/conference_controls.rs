@@ -458,6 +458,7 @@ pub fn use_language_preference() -> RwSignal<bool> {
     let use_english = RwSignal::new(
         stored_language.unwrap_or_else(|| !browser_language.to_ascii_lowercase().starts_with("zh")),
     );
+    crate::i18n::provide_language(use_english);
     Effect::new(move |_| {
         if let Some(root) = web_sys::window()
             .and_then(|window| window.document())

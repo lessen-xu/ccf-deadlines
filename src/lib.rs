@@ -2,6 +2,7 @@ use leptos::prelude::*;
 
 // Modules
 mod components;
+pub mod i18n;
 mod pages;
 
 // Top-Level pages
